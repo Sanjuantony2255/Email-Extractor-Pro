@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Extractor Pro</title>
+    <meta name="description" content="Extract email addresses from images instantly using advanced OCR technology.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for sleek icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1>Email Extractor <span class="gradient-text">Pro</span></h1>
+            <p>Upload any picture containing text, and we'll extract the email addresses instantly.</p>
+        </header>
+
+        <div class="app-card glass-panel">
+            <div class="upload-section" id="drop-zone">
+                <input type="file" id="file-input" accept="image/*" hidden>
+                <div class="upload-content">
+                    <i class="ph ph-upload-simple upload-icon"></i>
+                    <h3>Drag & Drop your image here</h3>
+                    <p>or click to browse from your computer</p>
+                    <button class="btn btn-primary" id="browse-btn">Browse Files</button>
+                </div>
+                <div class="image-preview-container hidden" id="preview-container">
+                    <img id="image-preview" src="" alt="Preview">
+                    <button class="btn btn-icon remove-btn" id="remove-btn" title="Remove image">
+                        <i class="ph ph-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="processing-section hidden" id="processing-section">
+                <div class="spinner"></div>
+                <p>Analyzing image and extracting text...</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="results-section hidden" id="results-section">
+                <div class="results-header">
+                    <h2>Extracted Emails</h2>
+                    <span class="badge" id="email-count">0 found</span>
+                </div>
+                <div class="email-list" id="email-list">
+                    <!-- Email items will be injected here -->
+                </div>
+                <div class="empty-state hidden" id="empty-state">
+                    <i class="ph ph-envelope-simple-open empty-icon"></i>
+                    <p>No email addresses found in this image.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>Created By Sanju Antony</p>
+        </footer>
+    </main>
+
+    <!-- Tesseract.js -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "email-extractor-pro",
+  "version": "1.0.0",
+  "description": "Frontend website to find email id from a picture",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
